@@ -13,10 +13,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { ImageDisplayComponent } from './image-display/image-display.component';
 import { WriteCommentBoxComponent } from './write-comment-box/write-comment-box.component';
 import { DisplayCommentComponent } from './display-comment/display-comment.component';
 import { HomeComponent } from './home/home.component';
+
 
 
 @NgModule({
@@ -32,14 +35,15 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     BrowserAnimationsModule,
 
-        //Angular Material
-        MatToolbarModule,
-        MatSidenavModule,
-        MatButtonModule,
-        MatDividerModule,
-        MatListModule,
-        MatGridListModule,
-        MatCardModule
+    //Angular Material
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
