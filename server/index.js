@@ -1,24 +1,25 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
-// const sequelize = require('./db')
-// var bodyParser = require('body-parser');
-const dotenv = require('dotenv');
-dotenv.config(); 
+const cors = require('cors'); //npm install cors --save
+var bodyParser = require('body-parser');
+//const dotenv = require('dotenv');
+//dotenv.config(); 
 const dbService = require('./db');
 const { response } = require('express');
+
+const postComment = require('./post-comment');
+const getComment = require('./read-comment');
 
 app.use(express.json());
 app.use(cors());
 
-app.listen(process.env.PORT, () => console.log('app is running')); //this console statement is working
+app.listen(3000, () => console.log('app is running')); //this console statement is working
 
 app.post('/insert', (req, res) => {
 
 });
 
 // read test
-app.get('/home', (req, res) => {
-    connection.query("SELECT * FROM ")
-    (console.log("this works"));
+app.get('/', (req, res) => {
+    res.send(getComment);
 });
