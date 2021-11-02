@@ -1,20 +1,12 @@
-const  = require(''); //db type
-const dotenv = require('dotenv'); //add .env
-dotenv.config();
+//npm command for installing mongodb driver: npm install mongodb --save
 
-const connection = .createConnection({ //db type
-  host: process.env.HOST,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
-  port: process.env.PORT
-})
-
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected"); //this console statement is working
-  connection.query("SELECT * FROM ", function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-  });
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://testuser:testpassword@captcha-comments.m9fie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  console.log("mongoDB is connected");
+  // perform actions on the collection object
+  client.close();
 });
+
