@@ -14,7 +14,7 @@ switch (window.location.hostname){
     break;
 
   default:
-    APIURL = 'http://localhost:3000';
+    APIURL = 'http://localhost:3000/api/';
 }; 
 
 

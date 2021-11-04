@@ -18,7 +18,7 @@ mongoose.connect(url, function(err){
 
 //GET all comments
 //returns a JSON object of comments from database
-router.get('/comments', function(req, res){
+router.get('/comment', function(req, res){
     console.log('GET all comments');
     Comment.find({}).exec(function(err, comments){
         if(err){

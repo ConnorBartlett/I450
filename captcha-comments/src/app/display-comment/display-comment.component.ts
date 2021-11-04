@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommentService } from '../services/comment.service';
+import { Comment } from '../_models/commentData';
 
 @Component({
   selector: 'app-display-comment',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayCommentComponent implements OnInit {
 
-  constructor() { }
+  public _comments;
 
-  ngOnInit(): void {
+  constructor(
+    private commentService: CommentService,
+
+  ) { }
+
+  getComments(){
+    this.commentService.getAllComments()
+    .subscribe(data => {
+      console.log(data)
+      this._comments = data
+    });
+  }
+
+  ngOnInit(){
+    this.getComments();
+    console.log("made it here");
   }
 
 }
