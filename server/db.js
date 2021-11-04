@@ -3,6 +3,7 @@
 require('dotenv').config();
 
 const { MongoClient } = require('mongodb'); 
+const router = require('express').Router();
 const uri = `${process.env.DATABASE_URI}`; //hidden in .env file
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
@@ -12,3 +13,4 @@ client.connect(err => {
   client.close();
 });
 
+module.exports = router; //required export

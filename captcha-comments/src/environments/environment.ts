@@ -6,6 +6,18 @@ export const environment = {
   production: false
 };
 
+export let APIURL = '';
+
+switch (window.location.hostname){
+  case 'captcha-comments.herokuapp.com':
+    APIURL = 'https://captcha-comments-server.herokuapp.com'
+    break;
+
+  default:
+    APIURL = 'http://localhost:3000';
+}; 
+
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
