@@ -16,6 +16,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 import { ImageDisplayComponent } from './image-display/image-display.component';
 import { WriteCommentBoxComponent } from './write-comment-box/write-comment-box.component';
@@ -47,9 +51,17 @@ import { HomeComponent } from './home/home.component';
     MatGridListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+  
+
+    FormsModule,
+    ReactiveFormsModule
+
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

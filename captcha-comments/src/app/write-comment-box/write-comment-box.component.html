@@ -1,6 +1,39 @@
-<form class="comment-form">
+
+<div class="comment-form">
+  <h3>leave a comment</h3>
+  <form #form="ngForm" (ngSubmit)="onSubmitPostComment(form.value)" class="well">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" required name="userName" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Comment</label>
+      <input type="text" class="form-control" required name="commentBody" ngModel>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+
+</div>
+
+
+
+<!-- <form class="comment-form">
     <mat-form-field class="comment-full-width" appearance="fill">
       <mat-label>Leave a comment</mat-label>
       <textarea matInput placeholder="Ex. This is an image of..."></textarea>
     </mat-form-field>
+    <button mat-button color="primary" >submit</button>
+  </form> -->
+
+  <!-- <form [formGroup]='commentForm'>
+    <div>
+      <mat-form-field>
+        <input formControlName="userName" matInput placeholder="Enter Username">
+      </mat-form-field>
+    <br>
+      <mat-form-field>
+        <input formControlName="content" matInput placeholder="Leave a comment...">
+      </mat-form-field>
+    </div>
   </form>
+  <button mat-button color="dark" (click)="onSubmitPostComment(data.comment)">Submit</button> -->

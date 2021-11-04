@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CommentService } from '../services/comment.service';
+import { FormGroup, FormBuilder, Form } from '@angular/forms';
+import { Comment } from '../_models/commentData';
 
 @Component({
   selector: 'app-write-comment-box',
@@ -7,9 +11,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WriteCommentBoxComponent implements OnInit {
 
-  constructor() { }
+  comments: Array<Comment>;
 
-  ngOnInit(): void {
+  selectedComment: Comment;
+
+  constructor(private _commentService: CommentService){}
+
+  ngOnInit() {
+    this._commentService.getAllComments().subscribe((resCommentData: Comment[]) => this.comments = resCommentData);
   }
+
+  onSubmitPostComment(commentObj){
+    console.log('this is the comment object: ');
+    console.log(commentObj);
+    this._commentService.postComment(commentObj);
+  }
+
+  // commentForm: FormGroup;
+  // editContent: '';
+
+  // constructor(@Inject(MAT_DIALOG_DATA)
+  // public data: any,
+  // private commentService: CommentService,
+  // private formBuilder: FormBuilder
+  // ) { 
+  //   this.createForm()
+  // }
+
+  // private createForm(){
+  //   this.commentForm = this.formBuilder.group({
+  //     content: ''
+  //   });
+  // };
+
+  // onSubmitPostComment(comment){
+  //   console.log('this is the data: ' + this.data);
+  //   console.log('this is the comment form value: ' + this.commentForm.value);
+  //   this.commentService.postComment(this.commentForm.value).subscribe(data =>{
+  //     console.log('comment posted successfully');
+  //   });window.location.href;
+  // }
+
+
+
+  // ngOnInit() {
+  //   console.log('comment-box ran');
+  // }
 
 }

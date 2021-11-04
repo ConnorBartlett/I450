@@ -46,7 +46,9 @@ router.post('/comment', function(req, res){
     console.log('POST comment');
     var newComment = new Comment();
     newComment.userName = req.body.userName;
+    console.log("username: " + req.body.userName);
     newComment.commentBody = req.body.commentBody;
+    console.log("username: " + req.body.commentBody);
     newComment.save(function(err, insertedComment){
         if(err){
             console.log('error posting comment');
