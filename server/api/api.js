@@ -54,6 +54,7 @@ router.post('/comment', function(req, res){
             console.log('error posting comment');
         } else{
             res.json(insertedComment);
+            console.log(insertedComment);
         }
     })
 })

@@ -11,51 +11,53 @@ import { Comment } from '../_models/commentData';
 })
 export class WriteCommentBoxComponent implements OnInit {
 
-  comments: Array<Comment>;
+  // comments: Array<Comment>;
 
-  selectedComment: Comment;
+  // selectedComment: Comment;
 
-  constructor(private _commentService: CommentService){}
-
-  ngOnInit() {
-    this._commentService.getAllComments().subscribe((resCommentData: Comment[]) => this.comments = resCommentData);
-  }
-
-  onSubmitPostComment(commentObj){
-    console.log('this is the comment object: ');
-    console.log(commentObj);
-    this._commentService.postComment(commentObj);
-  }
-
-  // commentForm: FormGroup;
-  // editContent: '';
-
-  // constructor(@Inject(MAT_DIALOG_DATA)
-  // public data: any,
-  // private commentService: CommentService,
-  // private formBuilder: FormBuilder
-  // ) { 
-  //   this.createForm()
-  // }
-
-  // private createForm(){
-  //   this.commentForm = this.formBuilder.group({
-  //     content: ''
-  //   });
-  // };
-
-  // onSubmitPostComment(comment){
-  //   console.log('this is the data: ' + this.data);
-  //   console.log('this is the comment form value: ' + this.commentForm.value);
-  //   this.commentService.postComment(this.commentForm.value).subscribe(data =>{
-  //     console.log('comment posted successfully');
-  //   });window.location.href;
-  // }
-
-
+  // constructor(private _commentService: CommentService){}
 
   // ngOnInit() {
-  //   console.log('comment-box ran');
+  //   this._commentService.getAllComments().subscribe((resCommentData: Comment[]) => this.comments = resCommentData);
   // }
+
+  // onSubmitPostComment(commentObj){
+  //   console.log('this is the comment object: ');
+  //   console.log(commentObj);
+  //   this._commentService.postComment(commentObj);
+  // }
+
+  commentForm: FormGroup;
+  editContent: '';
+
+  constructor(@Inject(MAT_DIALOG_DATA)
+  public data: any,
+  private commentService: CommentService,
+  private formBuilder: FormBuilder,
+
+  ) { 
+    this.createForm()
+  }
+
+  private createForm(){
+    this.commentForm = this.formBuilder.group({
+      content: ''
+    });
+  };
+
+  //on submit function posts data from html form to db
+  onSubmitPostComment(commentObj){
+    console.log('this is the data: ' + this.data);
+    console.log('this is the comment form value: ' + commentObj);
+    this.commentService.postComment(commentObj).subscribe(resNewComment =>{
+      console.log(commentObj);
+    });window.location.href;
+  }
+
+
+
+  ngOnInit() {
+    console.log('comment-box ran');
+  }
 
 }

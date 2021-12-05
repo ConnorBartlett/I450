@@ -13,20 +13,22 @@ export class DisplayCommentComponent implements OnInit {
 
   constructor(
     private commentService: CommentService,
-
   ) { }
 
   getComments(){
     this.commentService.getAllComments()
     .subscribe(data => {
+      console.log("here are the comments: -->")
       console.log(data)
       this._comments = data
+      this.commentService.sCommentObject = data;
     });
   }
 
   ngOnInit(){
     this.getComments();
-    console.log("made it here");
+    console.log("initializing comment display");
   }
+  
 
 }

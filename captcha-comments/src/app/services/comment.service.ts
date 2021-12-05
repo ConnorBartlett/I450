@@ -15,7 +15,9 @@ const httpOptions = {
 })
 export class CommentService {
 
-  base = `${APIURL}comment`;
+  public sCommentObject;
+
+  base = `${APIURL}/comment`;
 
   httpHeaders = new Headers({
     'Content-Type': 'application/json',
@@ -28,12 +30,14 @@ export class CommentService {
   postComment(comment: Comment) {
     console.log('i posted');
     return this.http.post(`${this.base}`, JSON.stringify(comment), httpOptions);
-  }
+  };
 
   //GET all comments
   getAllComments(){
-    console.log('this is the base:' + `${this.base}`)
+    console.log('got Comments. BASE V');
+    console.log(`${this.base}`)
     return this.http.get(`${this.base}`);
-  }
+  };
+  
   
 }

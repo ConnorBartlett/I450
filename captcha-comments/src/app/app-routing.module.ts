@@ -14,11 +14,12 @@ import { ImageDisplayComponent } from './image-display/image-display.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'api/comment', component: DisplayCommentComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
