@@ -1,5 +1,7 @@
 # CaptchaComments
 
+This project was written by Connor Bartlett, Nengezi Moyo, and Salile Malisita.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
 ## Development server

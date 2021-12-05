@@ -22,7 +22,7 @@ export class CommentService {
   httpHeaders = new Headers({
     'Content-Type': 'application/json',
     'Authorization': '*'
-  })
+  });
 
   constructor(private http: HttpClient) { }
 
