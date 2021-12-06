@@ -1,7 +1,19 @@
-<div class='displayComments' style="height: 600px; width: 500px; background-color: yellow; margin-top: 2%; margin-left: 36%">
+
+
+
+
+<div class='displayComments'>
+    <div class='commentTitle'>
+        <p>Past Comments</p>
+    </div>
     <div *ngIf="_comments">
         <div class="deck" *ngFor="let comment of _comments">
-            <p>{{comment.commentBody}}</p>
+            <div class="singleComment">
+                <p>{{comment.commentBody}}</p>
+            </div>
         </div>
     </div>
+
 </div>
+
+<!--<div class='displayComments' style="height: 600px; width: 500px; background-color: yellow; margin-top: 2%; margin-left: 36%">-->

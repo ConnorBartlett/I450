@@ -2,11 +2,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const commentSchema = new Schema({
+const imageSchema = new Schema({
     imageId: Number,
-    userName: String,
-    commentBody: String
+    photographer: String,
+    url: String,
 });
 
-module.exports = mongoose.model('comment', commentSchema, 'comments');
+module.exports = mongoose.model('image', imageSchema, 'images');
 // .model(object name, data model, collection name)

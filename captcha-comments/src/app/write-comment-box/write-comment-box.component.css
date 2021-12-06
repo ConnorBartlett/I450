@@ -1,12 +1,14 @@
-.comment-form {
-    margin-left: 43%;
-    min-width: 150px;
-    max-width: 250px;
-    width: 100%;
 
-    margin-top: -10%;
-  }
+.comment-form {
+  position: relative;
+  min-width: 150px;
+  max-width: 250px;
+  width: 100%;
+  margin-top: 5%; 
+  margin-left: 20%;
   
-  .comment-full-width {
-    width: 100%;
-  }
+}
+  
+.comment-full-width {
+  width: 100%;
+}

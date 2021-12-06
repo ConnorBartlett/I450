@@ -1,11 +1,11 @@
 export class Image {
 
-    _id: string;
+    imageId: Number;
     photographer: string;
     url: string;
 
     constructor(options: any){
-        this._id = options['_id']
+        this.imageId = options['imageId']
         this.photographer = options['photographer']
         this.url = options['url']
     }

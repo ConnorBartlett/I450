@@ -3,6 +3,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommentService } from '../services/comment.service';
 import { FormGroup, FormBuilder, Form } from '@angular/forms';
 import { Comment } from '../_models/commentData';
+import { ImageService } from '../services/image.service';
+import { debugOutputAstAsTypeScript } from '@angular/compiler';
 
 @Component({
   selector: 'app-write-comment-box',
@@ -11,29 +13,15 @@ import { Comment } from '../_models/commentData';
 })
 export class WriteCommentBoxComponent implements OnInit {
 
-  // comments: Array<Comment>;
-
-  // selectedComment: Comment;
-
-  // constructor(private _commentService: CommentService){}
-
-  // ngOnInit() {
-  //   this._commentService.getAllComments().subscribe((resCommentData: Comment[]) => this.comments = resCommentData);
-  // }
-
-  // onSubmitPostComment(commentObj){
-  //   console.log('this is the comment object: ');
-  //   console.log(commentObj);
-  //   this._commentService.postComment(commentObj);
-  // }
-
   commentForm: FormGroup;
   editContent: '';
+  completeComment: Comment;
 
   constructor(@Inject(MAT_DIALOG_DATA)
   public data: any,
   private commentService: CommentService,
   private formBuilder: FormBuilder,
+  private imageService: ImageService,
 
   ) { 
     this.createForm()
@@ -47,12 +35,27 @@ export class WriteCommentBoxComponent implements OnInit {
 
   //on submit function posts data from html form to db
   onSubmitPostComment(commentObj){
-    console.log('this is the data: ' + this.data);
-    console.log('this is the comment form value: ' + commentObj);
-    this.commentService.postComment(commentObj).subscribe(resNewComment =>{
-      console.log(commentObj);
+    console.log('userName: ' + JSON.stringify(commentObj.userName));
+    console.log('commentBody ' + JSON.stringify(commentObj.commentBody));
+    console.log('Id ' + this.imageService.imageDbId);
+    console.log(typeof(commentObj.userName));
+    this.completeComment = new Comment({
+      imageId: this.imageService.imageDbId,
+      userName: commentObj.userName,
+      commentBody: commentObj.commentBody
+    })
+    this.commentService.postComment(this.completeComment).subscribe(resNewComment =>{
+      console.log(`Response after submission: ${this.completeComment}`);
     });window.location.href;
   }
+
+  // onSubmitPostComment(commentObj){
+  //   console.log('this is the data: ' + this.data);
+  //   console.log('this is the comment form value: ' + commentObj);
+  //   this.commentService.postComment(commentObj).subscribe(resNewComment =>{
+  //     console.log(commentObj);
+  //   });window.location.href;
+  // }
 
 
 

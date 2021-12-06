@@ -15,7 +15,7 @@ import { ImageDisplayComponent } from './image-display/image-display.component';
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'api/comment', component: DisplayCommentComponent},
+  // {path: 'api/comment', component: DisplayCommentComponent},
 ];
 
 @NgModule({

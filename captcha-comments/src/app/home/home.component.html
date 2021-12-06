@@ -1,10 +1,8 @@
 
 <!--home component is essentially our 'home base'. This is what will 'hold' the components generated when a user is logged in (once auth is finalized).-->
 
-<h1 style="text-align: center;">Captch-Comments</h1>
-
 <div class='container' >
-    <app-image-display></app-image-display> <!--image-display html file-->
+    <app-image-display (eventBool)="toggleComments($event)"></app-image-display> <!--image-display html file-->
 </div>
 
 <div class='container'>
@@ -12,5 +10,5 @@
 </div>
 
 <div class='container'>
-    <app-display-comment></app-display-comment> <!--display-comment html file-->
+    <app-display-comment *ngIf="loadCommentsTrigger"></app-display-comment> <!--display-comment html file-->
 </div>

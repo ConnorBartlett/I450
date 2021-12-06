@@ -1,11 +1,11 @@
 export class Comment {
 
-    // _id: string;
+    imageId: Number;
     userName: string;
     commentBody: string;
 
     constructor(options: any){
-        // this._id = options['_id']
+        this.imageId = options['imageId']
         this.userName = options['userName']
         this.commentBody = options['commentBody']
     }

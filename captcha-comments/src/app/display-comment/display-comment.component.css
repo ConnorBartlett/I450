@@ -1,0 +1,30 @@
+.displayComments{
+    height: 700px; 
+    width: 600px; 
+    background-color: rgb(209, 209, 207); 
+    margin-top: -30%;
+    margin-right: 10%; 
+    float: right;
+}
+
+.commentTitle{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.deck{
+    font-size: 15px;
+}
+
+.singleComment{
+    background-color: bisque;
+    max-width: 95%;
+    height: 50px;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+}
