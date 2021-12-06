@@ -13,7 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 
 export class DisplayCommentComponent implements OnInit{
 
-@Input()
+  public comFinal: Comment;
+
+@Input() comm;
 
   public _comments;
   constructor(
@@ -29,12 +31,17 @@ export class DisplayCommentComponent implements OnInit{
     });
   }
 
-
-  
   ngOnInit(){
     this.getComments();
     console.log("DISPLAY COMMENT COMPONENT INIT");
   }
-  
+
+  ngOnChanges(){
+    //this.getComments();
+    if(this.comm){
+    this._comments.push(this.comm);
+    console.log('onchange fires');
+    }
+  };
 
 }

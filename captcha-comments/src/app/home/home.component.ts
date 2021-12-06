@@ -5,6 +5,7 @@ import { DisplayCommentComponent } from '../display-comment/display-comment.comp
 import { MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { ImageService } from '../services/image.service';
+import { Comment } from '../_models/commentData';
 
 
 @Component({
@@ -17,13 +18,26 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   public loadCommentsTrigger: boolean = false;
-  private imageService: ImageService; 
+  private imageService: ImageService;
+  public comMiddleMan: Comment; 
+  public comSend: Comment;
 
   toggleComments(bool){
     if(bool == true){
-      console.log('DATA PASSED YOOOOO');
+      console.log('show comment component loaded on conditional');
       this.loadCommentsTrigger = true;
     }
+  };
+
+  storeComment(comment){
+    this.comMiddleMan = comment;
+    this.comSend = comment;
+    console.log(`*-*-* COMMENT AT HOME COMP, User: ${comment.userName} Com: ${comment.commentBody} `);
+    this.sendComment();
+  }; //gets obj from write com component, assigns to cmm
+
+  sendComment(){
+    return this.comSend;
   }
 
 

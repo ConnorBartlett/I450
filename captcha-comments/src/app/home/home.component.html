@@ -6,7 +6,7 @@
 </div>
 
 <div class='container'>
-    <app-write-comment-box></app-write-comment-box> <!--write-comment-box html file-->
+    <app-write-comment-box (sendNewCom)="storeComment($event)"></app-write-comment-box> <!--write-comment-box html file-->
 </div>
 
 <div class='container'>
@@ -14,5 +14,5 @@
         Data from image display component(child) flows to home component (parent) utilizing lifecycle hooks in each
         along with an EventEmitter in child component automatically triggered post initialization.
      -->
-    <app-display-comment *ngIf="loadCommentsTrigger"></app-display-comment> <!--display-comment html file-->
+    <app-display-comment *ngIf="loadCommentsTrigger" [comm]="sendComment()"></app-display-comment> <!--display-comment html file-->
 </div>

@@ -15,8 +15,8 @@
 
 </div> -->
 
-<!--Implementing Angular Material Forms-->
-<div class="comment-form">
+<!--Implementing Angular Material Forms w/o form control-->
+<!-- <div class="comment-form">
 <form #form="ngForm" (ngSubmit)="onSubmitPostComment(form.value)" class="well">
   <mat-form-field class="form-group" appearance="fill">
     <mat-label>Username:</mat-label>
@@ -29,4 +29,25 @@
   </mat-form-field>
   <button mat-raised-button color="primary" type="submit" class="btn btn-success">Submit</button>
 </form>
+</div> -->
+
+<!--V3 Angular Material with Formcontrol for reactive forms-->
+<div class="comment-form">
+
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmitPostComment()">
+
+    <mat-form-field class="form-group" appearance="fill">
+      <mat-label for="userName">Username:</mat-label>
+      <input matInput id="userName" type="text" formControlName="userName" placeholder="Ex. User1">
+    </mat-form-field>
+  
+    <mat-form-field class="form-group" appearance="fill">
+      <mat-label for="commentBody">Leave a comment: </mat-label>
+      <textarea matInput id="commentBody" type="text" formControlName="commentBody" placeholder="Ex. In this photo, I see a..."></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+
 </div>
