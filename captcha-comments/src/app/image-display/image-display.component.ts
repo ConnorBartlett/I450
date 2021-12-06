@@ -91,7 +91,10 @@ export class ImageDisplayComponent implements OnInit {
   }
 
 
-
+  fetchNewImage(){
+    this.ngOnInit();
+    console.log("new image pressed");
+  };
 
   ngOnInit(){
     console.log("IMAGE DISPLAY COMPONENT INIT");

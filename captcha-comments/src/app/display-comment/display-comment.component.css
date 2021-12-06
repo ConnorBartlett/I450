@@ -1,24 +1,74 @@
-.displayComments{
+.position{
+    margin-top: -36%;
+    margin-left: 63%;
+    margin-bottom: 2%;
+    padding-right: 2%;
+    position: fixed;
+}
+
+.wrapper{
     height: 700px; 
     width: 600px; 
-    background-color: rgb(233, 233, 231); 
-    margin-top: -35%;
-    margin-right: 10%; 
     float: right;
+    overflow: hidden;
+}
+
+.displayComments{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 17px;
+    box-sizing: content-box;
 }
 
 .commentTitle{
+    color: #673AB7;
+    position: fixed;
     text-align: center;
     font-size: 45px;
     font-weight: bold;
-    margin-top: 2%;
+    margin-top: -2%;
+    margin-left: .5%
 }
 
 .deck{
     font-size: 15px;
+    padding-right: 1%;
 }
 
 .singleComment{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(241, 241, 239);
+    max-width: 95%;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+}
+
+.cardTitle{
+
+}
+
+.cardText{
+
+}
+
+
+/* .displayComments{
+    height: 700px; 
+    width: 600px; 
+    background-color: rgb(233, 233, 231); 
+    margin-top: -40%;
+    margin-right: 10%; 
+    float: right;
+    overflow: scroll;
+} */
+
+/* .singleComment{
     background-color: rgb(241, 241, 239);
     max-width: 95%;
     height: 50px;
@@ -28,4 +78,6 @@
     border-style: solid;
     border-color: grey;
     border-width: 1px;
-}
+    overflow-wrap: break-word;
+    overflow-x: scroll;
+} */

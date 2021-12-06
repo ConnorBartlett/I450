@@ -1,24 +1,34 @@
 
-<div class='displayComments'>
+<div class="position">
+    
+    <div class='wrapper'>
+        <div class='displayComments'>
 
-    <div class='commentTitle'>
-        <p>Previous Comments</p>
-    </div>
-
-    <div *ngIf="_comments">
-        <div class="deck" *ngFor="let comment of _comments">
-            <mat-card class="singleComment">
-                <mat-card-title-group>
-                    <mat-card-title>{{comment.userName}}</mat-card-title>
-                </mat-card-title-group>
-                <mat-card-content>
-                    {{comment.commentBody}}
-                </mat-card-content>
-                </mat-card>
+            <div class='commentTitle'>
+                <p>Captcha-Comments</p>
             </div>
-        </div>
-</div>
 
+            <div *ngIf="_comments">
+                <div class="deck" *ngFor="let comment of _comments">
+                    <mat-card class="singleComment">
+                        <mat-card-title-group>
+                            <mat-card-title>
+                                <div class="cardTitle">
+                                    {{comment.userName}}
+                                </div>
+                            </mat-card-title>
+                        </mat-card-title-group>
+                        <mat-card-content>
+                            <div class="cardText">
+                                {{comment.commentBody}}
+                            </div>
+                        </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
 
 <!--Angular Material (cards) Implementation-->
 

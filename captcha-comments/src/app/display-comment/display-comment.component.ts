@@ -15,7 +15,7 @@ export class DisplayCommentComponent implements OnInit{
 
   public comFinal: Comment;
 
-@Input() comm;
+@Input() comm; //trigger for pushing new comment
 
   public _comments;
   constructor(
@@ -31,6 +31,8 @@ export class DisplayCommentComponent implements OnInit{
     });
   }
 
+
+
   ngOnInit(){
     this.getComments();
     console.log("DISPLAY COMMENT COMPONENT INIT");
@@ -41,7 +43,8 @@ export class DisplayCommentComponent implements OnInit{
     if(this.comm){
     this._comments.push(this.comm);
     console.log('onchange fires');
-    }
+    };
+
   };
 
 }

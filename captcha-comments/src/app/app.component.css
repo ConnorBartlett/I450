@@ -1,0 +1,9 @@
+.appNameWrapper{
+    background-color: transparent;
+}
+
+.appName{
+    padding-top: 1%;
+    font-size: 45px;
+    font-weight: bold;
+}

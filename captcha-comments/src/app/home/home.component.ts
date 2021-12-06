@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   private imageService: ImageService;
   public comMiddleMan: Comment; 
   public comSend: Comment;
+  public refreshCommentsTrigger: boolean = false;
 
   toggleComments(bool){
     if(bool == true){
@@ -38,6 +39,10 @@ export class HomeComponent implements OnInit {
 
   sendComment(){
     return this.comSend;
+  }
+
+  refreshComponents(){
+    this.ngOnInit;
   }
 
 
