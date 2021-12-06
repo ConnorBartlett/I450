@@ -10,5 +10,9 @@
 </div>
 
 <div class='container'>
+    <!--
+        Data from image display component(child) flows to home component (parent) utilizing lifecycle hooks in each
+        along with an EventEmitter in child component automatically triggered post initialization.
+     -->
     <app-display-comment *ngIf="loadCommentsTrigger"></app-display-comment> <!--display-comment html file-->
 </div>

@@ -1,10 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommentService } from '../services/comment.service';
-import { FormGroup, FormBuilder, Form } from '@angular/forms';
+import { FormGroup, FormBuilder, Form, FormsModule, FormControl } from '@angular/forms';
 import { Comment } from '../_models/commentData';
 import { ImageService } from '../services/image.service';
 import { debugOutputAstAsTypeScript } from '@angular/compiler';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-write-comment-box',
@@ -46,16 +47,9 @@ export class WriteCommentBoxComponent implements OnInit {
     })
     this.commentService.postComment(this.completeComment).subscribe(resNewComment =>{
       console.log(`Response after submission: ${this.completeComment}`);
-    });window.location.href;
+    });
+    window.location.href;
   }
-
-  // onSubmitPostComment(commentObj){
-  //   console.log('this is the data: ' + this.data);
-  //   console.log('this is the comment form value: ' + commentObj);
-  //   this.commentService.postComment(commentObj).subscribe(resNewComment =>{
-  //     console.log(commentObj);
-  //   });window.location.href;
-  // }
 
 
 

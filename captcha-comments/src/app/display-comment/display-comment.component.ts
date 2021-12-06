@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommentService } from '../services/comment.service';
 import { Comment } from '../_models/commentData';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-display-comment',
@@ -29,6 +30,7 @@ export class DisplayCommentComponent implements OnInit{
   }
 
 
+  
   ngOnInit(){
     this.getComments();
     console.log("DISPLAY COMMENT COMPONENT INIT");

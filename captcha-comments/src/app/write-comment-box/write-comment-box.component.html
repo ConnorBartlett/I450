@@ -1,6 +1,6 @@
 
-<div class="comment-form">
-  <h3>leave a comment</h3>
+<!-- <div class="comment-form">
+  <h3>Leave a comment</h3>
   <form #form="ngForm" (ngSubmit)="onSubmitPostComment(form.value)" class="well">
     <div class="form-group">
       <label>Username</label>
@@ -13,27 +13,20 @@
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 
+</div> -->
+
+<!--Implementing Angular Material Forms-->
+<div class="comment-form">
+<form #form="ngForm" (ngSubmit)="onSubmitPostComment(form.value)" class="well">
+  <mat-form-field class="form-group" appearance="fill">
+    <mat-label>Username:</mat-label>
+    <input matInput type="text" class="form-control" placeholder="Ex. User1" value="Username" required name="userName" ngModel>
+  </mat-form-field>
+
+  <mat-form-field class="form-group" appearance="fill">
+    <mat-label>Leave a comment: </mat-label>
+    <textarea matInput placeholder="Ex. In this photo, I see a..." type="text" class="form-control" required name="commentBody" ngModel></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" class="btn btn-success">Submit</button>
+</form>
 </div>
-
-
-
-<!-- <form class="comment-form">
-    <mat-form-field class="comment-full-width" appearance="fill">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. This is an image of..."></textarea>
-    </mat-form-field>
-    <button mat-button color="primary" >submit</button>
-  </form> -->
-
-  <!-- <form [formGroup]='commentForm'>
-    <div>
-      <mat-form-field>
-        <input formControlName="userName" matInput placeholder="Enter Username">
-      </mat-form-field>
-    <br>
-      <mat-form-field>
-        <input formControlName="content" matInput placeholder="Leave a comment...">
-      </mat-form-field>
-    </div>
-  </form>
-  <button mat-button color="dark" (click)="onSubmitPostComment(data.comment)">Submit</button> -->

@@ -1,8 +1,39 @@
 
-
-
-
 <div class='displayComments'>
+
+    <div class='commentTitle'>
+        <p>Previous Comments</p>
+    </div>
+
+    <div *ngIf="_comments">
+        <div class="deck" *ngFor="let comment of _comments">
+            <mat-card class="singleComment">
+                <mat-card-title-group>
+                    <mat-card-title>{{comment.userName}}</mat-card-title>
+                </mat-card-title-group>
+                <mat-card-content>
+                    {{comment.commentBody}}
+                </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+</div>
+
+
+<!--Angular Material (cards) Implementation-->
+
+<!-- <mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Small</mat-card-subtitle>
+      <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+    </mat-card-title-group>
+    <mat-card-content>
+      {{longText}}
+    </mat-card-content>
+  </mat-card> -->
+
+<!-- <div class='displayComments'>
     <div class='commentTitle'>
         <p>Past Comments</p>
     </div>
@@ -13,7 +44,5 @@
             </div>
         </div>
     </div>
+</div> -->
 
-</div>
-
-<!--<div class='displayComments' style="height: 600px; width: 500px; background-color: yellow; margin-top: 2%; margin-left: 36%">-->
