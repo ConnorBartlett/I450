@@ -1,11 +1,11 @@
 
 .comment-form {
-  position: relative;
+  /* position: relative; */
   min-width: 300px;
   max-width: 400px;
   width: 100%;
-  margin-top: 5%; 
-  margin-left: 15%;
+  /* margin-top: 5%;  */
+  margin-left: 25%;
 }
   
 .form-group {

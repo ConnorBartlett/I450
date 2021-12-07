@@ -1,8 +1,21 @@
-/* .bgWrap{
-    background: url('../../assets/images/bgimage.png');
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-} */
+.bgWrap{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
 
+.imageDisplay{
+    grid-column: 2/4;
+    grid-row: 2/6;
+}
+
+.writeComment{
+    grid-column: 2;
+    grid-row: 6/8;
+}
+
+.displayComment{
+    grid-column: 5;
+    grid-row: 3 / 8;
+}

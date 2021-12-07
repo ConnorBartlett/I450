@@ -1,15 +1,14 @@
 .position{
-    margin-top: -36%;
-    margin-left: 63%;
+    /* margin-left: 63%; */
     margin-bottom: 2%;
     padding-right: 2%;
-    position: fixed;
+    /* position: relative; */
 }
 
 .wrapper{
     height: 700px; 
     width: 600px; 
-    float: right;
+    /* float: right; */
     overflow: hidden;
 }
 

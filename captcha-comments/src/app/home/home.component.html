@@ -1,19 +1,25 @@
 
 <!--home component is essentially our 'home base'. This is what will 'hold' the components generated when a user is logged in (once auth is finalized).-->
 <div class='bgWrap'>
-    <div class='container' >
+
+    <div class='imageDisplay'>
         <app-image-display (eventBool)="toggleComments($event)"></app-image-display> <!--image-display html file-->
     </div>
 
-    <div class='container'>
+
+
+    <div class='writeComment'>
         <app-write-comment-box (sendNewCom)="storeComment($event)"></app-write-comment-box> <!--write-comment-box html file-->
     </div>
 
-    <div class='container'>
+
+
+    <div class='displayComment'>
         <!--
-            Data from image display component(child) flows to home component (parent) utilizing lifecycle hooks in each
-            along with an EventEmitter in child component automatically triggered post initialization.
+        Data from image display component(child) flows to home component (parent) utilizing lifecycle hooks in each
+        along with an EventEmitter in child component automatically triggered post initialization.
         -->
         <app-display-comment *ngIf="loadCommentsTrigger" [comm]="sendComment()"></app-display-comment> <!--display-comment html file-->
+
     </div>
 </div>
